@@ -50,10 +50,10 @@ def train():
     model.summary()
 
     try:
-        model.load_weights(cp_path) # ('best_weights_67%.hdf5') #'best_weights_63%.hdf5'
-        print('Weights Loaded !!!')
+        model.load_weights(cp_path)
+        print('Weights loaded')
     except:
-        print('No Previous Weights Found !!!')
+        print('No Previous Weights Found')
 
     history = model.fit(train_data, epochs = 10, verbose = 1, validation_data = val_data, callbacks = [cp_callback])
     print(history.history.keys())
